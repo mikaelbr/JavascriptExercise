@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "Twitter-kata",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "express": "3.0.1",
-    "jshtml": "*"
+    "ntwitter": "~0.5.0",
+    "config": "~0.4.17",
+    "ejs": "~0.8.3"
   }
 }
