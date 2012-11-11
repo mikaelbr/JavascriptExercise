@@ -1,0 +1,10 @@
+<% include layout/login_header %>
+
+      <h1>Error: <%= error_code %></h1>
+      <p><%= error_msg %></p>
+
+      <% if(error_code === 401) { %>
+        <a href="/oauth" class="btn btn-large btn-success btn-block">Sign in using Twitter</a>
+      <% } %>
+
+<% include layout/login_footer %>

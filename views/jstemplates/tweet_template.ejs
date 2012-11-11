@@ -1,0 +1,19 @@
+<script id="tweet" type="text/html">
+<li class="media">
+  <article class="tweet-box media" id="tweet-{{ id }}" data-tweet-id="{{ id }}">
+    <a class="pull-left" href="#">
+      <img class="media-object img-rounded" src="{{ user.profile_image_url }}" alt="">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">{{ user.name }}</h4>
+      <datetime>{{ created_at }}</datetime>
+
+      <p>{{ text }}</p>
+
+      {{#retweeted}}
+        <p class="tweet-retweet"><i class="icon-retweet"></i> Retweeted by Mikael Brevik</p>
+      {{/retweeted}}
+    </div>
+  </article>
+</li>
+</script>

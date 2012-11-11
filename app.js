@@ -6,7 +6,9 @@
 var express = require('express')
   , http = require('http')
   , path = require('path')
-  , routes = require('./routes');
+  , controllers = require('./controllers')
+  , twitter = require('./lib/twitter')
+  , join = require('path').join;
 
 var app = express();
 
@@ -28,7 +30,12 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-routes.init(app);
+// Add page.js as a public file
+app.get('/page.js', function(req, res){
+  res.sendfile(join(__dirname, 'node_modules/page/', 'index.js'));
+});
+
+controllers.init(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

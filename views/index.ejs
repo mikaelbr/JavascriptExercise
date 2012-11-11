@@ -1,7 +1,26 @@
 <% include layout/header %>
 
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+  <div class="row total-wrapper">
+
+    <p class="loading-indicator">
+      <img src="/img/loader.png" />
+    </p>
+
+    <div class="span5 timeline-wrapper page-role" id="twitter-timeline" ></div>
+    <div class="span5 search-wrapper page-role hide" id="twitter-search" ></div>
+    <div class="span5 favorites-wrapper page-role hide" id="twitter-favorites" ></div>
 
 
+    <aside class="span3 pull-right">
+      <% include helpers/user %>
+    </aside><!-- /.span3 -->
+  </div><!-- /.row -->
+
+
+  <% include jstemplates/timeline %>
+  <% include jstemplates/search %>
+  <% include jstemplates/favorites %>
+  <% include jstemplates/tweet_template %>
+  <% include jstemplates/error %>
+      
 <% include layout/footer %>

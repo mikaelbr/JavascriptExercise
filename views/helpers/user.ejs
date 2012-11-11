@@ -1,0 +1,27 @@
+<% if (user) { %>
+<section class="user-info">
+
+  <img src="<%= user.profile_image_url_https %>" class="img-rounded pull-left" alt="Mikael Brevik">
+
+  <hgroup>
+    <h3><%= user.name %></h3>
+    <h4>@<%= user.screen_name %></h4>
+  </hgroup>
+
+  <p>
+    <%= user.description %>
+  </p>
+
+  <dl class="dl-horizontal">
+    <dt>Tweets</dt>
+    <dd><%= user.statuses_count %></dd>
+
+    <dt>Following</dt>
+    <dd><%= user.friends_count %></dd>
+
+    <dt>Followers</dt>
+    <dd><%= user.followers_count %></dd>
+  </dl>
+
+</section>
+<% } %>
