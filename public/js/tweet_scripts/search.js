@@ -1,4 +1,4 @@
-;(define(['jquery', 'ich'], function ( $, io ) {
+;(define(['jquery', 'scripts/base', 'ich'], function ( $ , base ) {
   // Create the defaults once
   var pluginName = "twitSearch",
     defaults = {
@@ -7,9 +7,9 @@
 
       tweetTemplate: "tweet",
 
-      searchURL: "/search.json",
+      getURL: "/search.json",
 
-      searchData: {
+      ajaxOptions: {
         count: 50
       }
     };
@@ -24,6 +24,8 @@
     this.init();
   }
 
+  $.extend(Plugin.prototype, base);
+
   Plugin.prototype.init = function () {
     this.$el.html(ich.search());
     this.showPage();
@@ -32,11 +34,6 @@
 
     this.bindEvents();
   };
-
-  Plugin.prototype.showPage = function() {
-
-  };
-
 
   /**
    * Listen for different events. Also allows third party apps to communicate
@@ -50,21 +47,6 @@
 
   Plugin.prototype.search = function(ev) {
   
-  };
-
-  Plugin.prototype.renderError = function (ev, data) {
-
-  };
-
-
-  Plugin.prototype.render = function (ev, data) {
-    
-  };
-
-
-
-  Plugin.prototype.fetch = function (options) {
-    
   };
 
   // A really lightweight plugin wrapper around the constructor, 

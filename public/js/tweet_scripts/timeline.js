@@ -1,4 +1,4 @@
-;(define(['jquery', 'ich'], function ( $, io ) {
+;(define(['jquery', 'scripts/base', 'ich'], function ( $ , base ) {
   // Create the defaults once
   var pluginName = "twitTimeline",
     defaults = {
@@ -11,7 +11,7 @@
       getURL: "/timeline.json",
       postURL: "/status.json",
 
-      timelineOptions: {
+      ajaxOptions: {
         count: 50
       }
     };
@@ -26,6 +26,8 @@
     this.init();
   }
 
+  $.extend(Plugin.prototype, base);
+
   Plugin.prototype.init = function () {
     this.$el.html(ich.timeline());
     this.showPage();
@@ -38,10 +40,6 @@
     this.bindEvents();
 
     this.fetch();
-  };
-
-  Plugin.prototype.showPage = function() {
-    this.$el.show().siblings('.page-role').hide();
   };
 
   /**
@@ -60,18 +58,6 @@
   };
 
   Plugin.prototype.updateStatus = function (ev) {
-    
-  };
-
-  Plugin.prototype.renderError = function (ev, data) {
-
-  };
-
-  Plugin.prototype.render = function (ev, data) {
-    
-  };
-
-  Plugin.prototype.fetch = function (options) {
     
   };
 

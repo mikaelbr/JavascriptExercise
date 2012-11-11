@@ -1,4 +1,4 @@
-;(define(['jquery', 'ich'], function ( $, io ) {
+;(define(['jquery', 'scripts/base', 'ich'], function ( $, base ) {
   // Create the defaults once
   var pluginName = "twitFavorites",
     defaults = {
@@ -9,7 +9,7 @@
 
       getURL: "/favorites.json",
 
-      favortiesOptions: {
+      ajaxOptions: {
         count: 50
       }
     };
@@ -24,6 +24,8 @@
     this.init();
   }
 
+  $.extend(Plugin.prototype, base);
+
   Plugin.prototype.init = function () {
     this.$el.html(ich.favorites());
     this.showPage();
@@ -34,10 +36,6 @@
     this.bindEvents();
 
     this.fetch();
-  };
-
-  Plugin.prototype.showPage = function() {
-    
   };
 
   /**
@@ -51,18 +49,6 @@
   };
 
   Plugin.prototype.refresh = function (ev) {
-    
-  };
-
-  Plugin.prototype.renderError = function (ev, data) {
-
-  };
-
-  Plugin.prototype.render = function (ev, data) {
-    
-  };
-
-  Plugin.prototype.fetch = function (options) {
     
   };
 
