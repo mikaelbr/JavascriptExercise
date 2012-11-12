@@ -1,5 +1,7 @@
 ;(define(['jquery', 'ich'], function ( $ ) {
-  
+  /*************************************************
+   *  IMPLEMENT STUFF HERE. 
+   *************************************************/
   return {
     render: function (ev, data) {
       

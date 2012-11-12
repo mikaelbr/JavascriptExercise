@@ -20,6 +20,10 @@ exports.setup = function (app) {
   app.get('/favorites.json', helper.gatekeeper('/login'), controller.favorites);
 };
 
+
+/*************************************************
+ *  IMPLEMENT STUFF HERE. FOR THE MOST PART
+ *************************************************/
 APIController.prototype.timeline = function (req, res) {
 
 };

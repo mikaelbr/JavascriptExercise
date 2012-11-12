@@ -45,9 +45,18 @@
     this.$el.on("submit", this.options.formSelector, $.proxy(this.search, this));
   };
 
+
+  /*************************************************
+   *  IMPLEMENT STUFF HERE. FOR THE MOST PART
+   *************************************************/
   Plugin.prototype.search = function(ev) {
   
   };
+
+
+  /*************************************************
+   *  END IMPLEMENTATION
+   *************************************************/
 
   // A really lightweight plugin wrapper around the constructor, 
   // preventing against multiple instantiations

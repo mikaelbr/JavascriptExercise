@@ -26,6 +26,7 @@
     this.init();
   }
 
+  // Extend our plugin to implement the shared methods.
   $.extend(Plugin.prototype, base);
 
   Plugin.prototype.init = function () {
@@ -53,6 +54,10 @@
     this.$form.on("submit", $.proxy(this.updateStatus, this));
   };
 
+
+  /*************************************************
+   *  IMPLEMENT STUFF HERE. FOR THE MOST PART
+   *************************************************/
   Plugin.prototype.refresh = function (ev) {
     
   };
@@ -64,6 +69,10 @@
   Plugin.prototype.post = function (data) {
     
   };
+
+  /*************************************************
+   *  END IMPLEMENTATION
+   *************************************************/
 
   // A really lightweight plugin wrapper around the constructor, 
   // preventing against multiple instantiations
