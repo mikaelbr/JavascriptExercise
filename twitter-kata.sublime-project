@@ -1,12 +1,12 @@
 {
-	"folders":
-	[
-		{
-			"path": "./",
-      "file_exclude_patterns": ["*.sublime-workspace", ".gitignore"],
-      "folder_exclude_patterns": ["node_modules"]
-		}
-	],
+  "folders":
+  [
+    {
+      "path": "./",
+      "file_exclude_patterns": ["*.sublime-workspace", ".gitignore", "login.ejs", "package.json", "*.pdf"],
+      "folder_exclude_patterns": ["node_modules", "config", "layout", "lib", "_libs"]
+    }
+  ],
   "settings": {
       "tab_size": 2
   }
