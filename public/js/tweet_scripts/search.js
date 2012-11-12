@@ -56,7 +56,7 @@
       return false;
     } 
 
-    var params = { q: val.trim() };
+    var params = { q: val };
 
     this.fetch(params);
     return false;
