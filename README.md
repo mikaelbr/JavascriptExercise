@@ -150,7 +150,7 @@ First we need to update the JSON API. Probably we haven't implemented all argume
 We wrote (hopefully) the fetch() method in such a way that we can send in a object as a argument and we'll call the AJAX url with the argument we pass in as a part of the object. So for instance, if we run ```module.fetch({since_id: 32132132})```, ```fetch()``` will pass this on to the JSON API. 
 
 1. Everytime ```fetch()``` is executed, we need to save the ID of the newest tweet. (This can be saved directly on the plugin, i.e. this.since_id = SOMETHING).
-2. Implement the refresh() method by calling fetch with our new since_id value. 
+2. Implement the refresh() method. (Remember the since_id value). 
 
 (Hint: Remember, we returned the jqXHR object in the fetch method.)
 
