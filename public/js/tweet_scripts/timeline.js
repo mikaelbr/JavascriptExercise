@@ -29,6 +29,8 @@
   $.extend(Plugin.prototype, base);
 
   Plugin.prototype.init = function () {
+    var self = this;
+
     this.$el.html(ich.timeline());
     this.showPage();
     
@@ -39,7 +41,11 @@
 
     this.bindEvents();
 
-    this.fetch();
+    this.fetch().done(function (data) {
+      if (data[0] && data[0].id) {
+        self.since_id = data[0].id;
+      }
+    });
   };
 
   /**
@@ -54,8 +60,14 @@
   };
 
   Plugin.prototype.refresh = function (ev) {
+    var self = this;
+
     this.fetch({
       since_id: this.since_id
+    }).done(function (data) {
+      if ( data[0] && data[0].id) {
+        self.since_id = data[0].id;
+      }
     });
     return false;
   };
