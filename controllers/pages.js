@@ -27,6 +27,6 @@ exports.setup = function (app) {
 
 PagesController.prototype.index = function(req, res){
   res.render('index', { 
-
+    user: req.session.User
   });
 };
